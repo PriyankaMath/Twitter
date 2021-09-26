@@ -1,0 +1,52 @@
+<div class="container feeds-pg col-10">
+    <div class="container col-12">
+        <nav class="navbar navbar-default">
+            <div class="navbar-brand">
+                <span class="navbar-brand brand">Twitter</span>
+                <i class="fa fa-twitter" style="font-size:40px;color:#0988f3"></i>
+            </div>
+            <div class="searchbar col-9">
+                <div class="tweet-post">
+                    <form action="tweet">
+                        <div class="input-group tweet-input">
+                            <input type="text" class="form-control tweet-input" placeholder="What's happening?" name="tweet" id="tweet" #tweet>
+                            <button class="btn btn-outline-secondary tweet-btn" (click)="postTweet(tweet.value)" type="button" id="tweetbtn" >
+                                Post
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- <div class="searchbar col-9">
+                <form action="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control tweet-input" placeholder="Search tweets" name="q" id="q">
+                        <button class="btn btn-outline-secondary tweet-btn" type="button" id="searchbtn">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div> -->
+        </nav>
+    </div>
+    <!-- <div class="container col-10">
+        <div class="tweet-post">
+            <form action="tweet">
+                <div class="input-group tweet-input">
+                    <input type="text" class="form-control tweet-input" placeholder="What's happening?" name="tweet" id="tweet" #tweet>
+                    <button class="btn btn-outline-secondary tweet-btn" (click)="postTweet(tweet.value)" type="button" id="tweetbtn" >
+                        Post
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div> -->
+    <div class="feeds container col-12">
+       
+        <div class="feed row" *ngFor="let usertweet of tweets">
+            <div class="text col-10">
+                <p>{{ usertweet.tweet }}</p>
+            </div>
+            <div class="col-1"><button type="button" class="btn btn-primary" (click)="deletetwittermsg(usertweet.id)">Delete</button></div>
+            <div class="from col-12"><p> - @mukkatharun</p></div>
+        </div>
